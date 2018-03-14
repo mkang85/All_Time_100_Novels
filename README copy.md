@@ -1,3 +1,8 @@
+# All_Time_100_Novels
+CLI Data Gem project - allows you to select and find out info about Time Magazine's 100 Novels
+
+
+
 # AllTime100Novels
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/All_Time_100_Novels`. To experiment with that code, run `bin/console` for an interactive prompt.

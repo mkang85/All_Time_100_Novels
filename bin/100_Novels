@@ -1,3 +1,4 @@
 #!/usr/bin/env ruby
+require './lib/All_Time_100_Novels'
 
-puts "Hello World"
+AllTime100Novels::CLI.new.call
