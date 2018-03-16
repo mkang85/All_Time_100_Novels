@@ -23,6 +23,10 @@ class AllTime100Novels::CLI
     puts "U-W"
   end
 
+  def list_title_range
+    @titles = AllTime100Novels::Titles.whatever
+  end
+
   def menu
     puts "Please select the letter range starting with the first letter.  For example for 'A-B', you may simply type 'A' or 'a'."
     input = nil
@@ -30,7 +34,8 @@ class AllTime100Novels::CLI
     input = gets.strip.downcase
     case input
     when "a"
-      puts "List of A-B"
+      puts "List of A-B" # my guess would be that it would be @titles.a
+      list_title_range
       puts "Please select the title number:"
     when "c"
       puts "List of C-D"
