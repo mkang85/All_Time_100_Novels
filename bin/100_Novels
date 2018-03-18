@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 require './lib/All_Time_100_Novels'
 
-#AllTime100Novels::CLI.new.call
-AllTime100Novels::Scraper.new.get_page
+AllTime100Novels::CLI.new.call
+#AllTime100Novels::Scraper.new.get_page
