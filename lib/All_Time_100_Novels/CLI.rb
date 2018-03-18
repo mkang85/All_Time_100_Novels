@@ -3,8 +3,7 @@ class AllTime100Novels::CLI
 
   def call
     welcome
-    binding.pry
-    AllTime100Novels::Scraper.new.get_page
+    AllTime100Novels::Scraper.make_titles
     list_titles
     menu
   end

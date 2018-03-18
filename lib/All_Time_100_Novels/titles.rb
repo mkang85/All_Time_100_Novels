@@ -1,7 +1,7 @@
 class AllTime100Novels::Titles
   attr_accessor :author, :desciption, :year_released
 
-  def self.scrape_titles
+  def self.make_from_index_page(title)
     titles = []
 
     titles << self.scrape_a
@@ -10,7 +10,7 @@ class AllTime100Novels::Titles
 
   def scrape_a
     doc = Nokogiri()
-  end 
+  end
 
   # def self.a # need to scrape each part of the a-b...c-d....or do I just go through with listing all of the titles, and then sorting them out based on the letter criteria later?
   # puts "1. A whatever"
