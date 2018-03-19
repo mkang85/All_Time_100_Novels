@@ -1,4 +1,7 @@
 class AllTime100Novels::Scraper
+
+  @@all = []
+
   def get_page
     title_info = []
     doc = Nokogiri::HTML(open("http://entertainment.time.com/2005/10/16/all-time-100-novels/slide/all/"))
@@ -7,9 +10,9 @@ class AllTime100Novels::Scraper
       position = title.attr("data-pos")
       url = title.attr("href")
       title_name = title.text
-      title_info << {title_name: title_name, url: url, position: position}
+      @@all << {title_name: title_name, url: url, position: position}
     end
-    title_info
+    @@all
   end
 
   def make_titles
