@@ -5,8 +5,7 @@ class AllTime100Novels::CLI
     welcome
     AllTime100Novels::Scraper.new.get_page #Here I want to just see where I left off.
     #just wanted to see this update
-    list_titles
-    menu
+      menu
   end
 
   def welcome
@@ -42,6 +41,7 @@ class AllTime100Novels::CLI
 
   def menu
     puts "Please type a letter in the range you would like to select!"
+    list_titles
     input = nil
     while input != "exit"
     input = gets.strip.downcase
@@ -51,52 +51,108 @@ class AllTime100Novels::CLI
       puts "Please select the title number:"
       num = gets.strip.to_i
       print_title_page(num)
+        input = gets.strip.downcase
+        if input == "y"
+          menu
+        else
+          puts ""
+          puts "Thanks for stopping by!"
+        end
     when "c", "d"
       get_titles(18, 31)
       puts "Please select the title number:"
       num = gets.strip.to_i
       print_title_page(num)
+      input = gets.strip.downcase
+      if input == "y"
+        menu
+      else
+        puts ""
+        puts "Thanks for stopping by!"
+      end
     when "f", "g"
       get_titles(32, 39)
       puts "Please select the title number:"
       num = gets.strip.to_i
       print_title_page(num)
+      input = gets.strip.downcase
+      if input == "y"
+        menu
+      else
+        puts ""
+        puts "Thanks for stopping by!"
+      end
     when "h", "i"
       get_titles(40, 48)
       puts "Please select the title number:"
       num = gets.strip.to_i
       print_title_page(num)
+      input = gets.strip.downcase
+      if input == "y"
+        menu
+      else
+        puts ""
+        puts "Thanks for stopping by!"
+      end
     when "l", "n"
       get_titles(49, 65)
       puts "Please select the title number:"
       num = gets.strip.to_i
       print_title_page(num)
+      input = gets.strip.downcase
+      if input == "y"
+        menu
+      else
+        puts ""
+        puts "Thanks for stopping by!"
+      end
     when "o", "r"
       get_titles(66, 80)
       puts "Please select the title number:"
       num = gets.strip.to_i
       print_title_page(num)
+      input = gets.strip.downcase
+      if input == "y"
+        menu
+      else
+        puts ""
+        puts "Thanks for stopping by!"
+      end
     when "s", "t"
       get_titles(81, 93)
       puts "Please select the title number:"
       num = gets.strip.to_i
       print_title_page(num)
+      input = gets.strip.downcase
+      if input == "y"
+        menu
+      else
+        puts ""
+        return "Thanks for stopping by!"
+      end
     when "u", "w"
       get_titles(94, 100)
       puts "Please select the title number:"
       num = gets.strip.to_i
       print_title_page(num)
+      input = gets.strip.downcase
+      if input == "y"
+        menu
+      else
+        puts ""
+        puts "Thanks for stopping by!"
+      end
     when "y", "z", "e", "j", "k", "q", "v"
       puts "Suprisingly, there are no novels that start with 'e', 'j', 'k', 'q', 'v', 'y' or 'z' that made the list! Please choose again. As a reminder, you can type 'list' for the letter ranges, and 'exit' to leave the program!"
     when "list"
-      puts list_titles
+        menu
     when "exit"
-      puts "Thanks for stopping by!"
+      return "Thanks for stopping by!"
     else
       puts "Sorry, invalid selection. Please select a letter range, type 'list' to see the letter ranges again, or 'exit' to exit the program!"
     end
-
   end
+  exit
 end
 
 end

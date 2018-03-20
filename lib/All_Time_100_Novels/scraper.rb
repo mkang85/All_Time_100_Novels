@@ -20,10 +20,16 @@ class AllTime100Novels::Scraper
 
   def self.title_page(num)
     doc = Nokogiri::HTML(open(@@all[num][:url]))
-    binding.pry
     summary = doc.css(".has-titles div  div p:nth-child(3)").text
-
-
+    author = doc.css(".has-titles div div aside div div p:nth-child(1)").text
+    release_date = doc.css(".has-titles div div aside div div p:nth-child(2)").text
+    puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    puts author
+    puts release_date
+    puts "``````````````````````````````````"
+    puts summary
+    puts "``````````````````````````````````"
+    puts "Would you like to see another selection?(Y/N)"
   end
 
 
