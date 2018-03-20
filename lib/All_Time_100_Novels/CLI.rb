@@ -32,7 +32,6 @@ class AllTime100Novels::CLI
 
   def get_titles(num1, num2)
     titles = AllTime100Novels::Scraper.all
-    #binding.pry
     while num1 <= num2
       puts "#{titles[num1][:position]}.  #{titles[num1][:title_name]}"
       num1 += 1
@@ -41,37 +40,37 @@ class AllTime100Novels::CLI
 
 
   def menu
-    puts "Please select the letter range starting with the first letter.  For example for 'A-B', you may simply type 'A' or 'a'."
+    puts "Please type a letter in the range you would like to select!"
     input = nil
     while input != "exit"
     input = gets.strip.downcase
     case input
-    when "a"
+    when "a", "b"
       get_titles(1, 17)
       puts "Please select the title number:"
-    when "c"
+    when "c", "d"
       get_titles(18, 31)
       puts "Please select the title number:"
-    when "f"
-        get_titles(32, 39)
+    when "f", "g"
+      get_titles(32, 39)
       puts "Please select the title number:"
-    when "h"
+    when "h", "i"
       get_titles(40, 48)
       puts "Please select the title number:"
-    when "l"
+    when "l", "n"
       get_titles(49, 65)
       puts "Please select the title number:"
-    when "o"
+    when "o", "r"
       get_titles(66, 80)
       puts "Please select the title number:"
-    when "s"
+    when "s", "t"
       get_titles(81, 93)
       puts "Please select the title number:"
-    when "u"
+    when "u", "w"
       get_titles(94, 100)
       puts "Please select the title number:"
-    when "y" || "z"
-      puts "Suprisingly, there are no novels that start with 'y' or 'z' that made the list! Please choose again. As a reminder, you can type 'list' for the letter ranges, and 'exit' to leave the program!"
+    when "y", "z", "e", "j", "k", "q", "v"
+      puts "Suprisingly, there are no novels that start with 'e', 'j', 'k', 'q', 'v', 'y' or 'z' that made the list! Please choose again. As a reminder, you can type 'list' for the letter ranges, and 'exit' to leave the program!"
     when "list"
       puts list_titles
     when "exit"
