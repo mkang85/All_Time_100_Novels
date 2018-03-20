@@ -14,11 +14,14 @@ class AllTime100Novels::Scraper
     end
   end
 
-  def make_titles
-    get_page.each do |title|
-      AllTime100Novels::Titles.make_from_index_page(title)
-    end
+  def self.all
+    @@all
   end
+  # def make_titles
+  #   get_page.each do |title|
+  #     AllTime100Novels::Titles.make_from_index_page(title)
+  #   end
+  # end
 
 
 end

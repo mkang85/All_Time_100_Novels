@@ -26,13 +26,17 @@ class AllTime100Novels::CLI
     puts "U-W"
   end
 
-  def list_title_range
-    @titles = AllTime100Novels::Titles
-  end
+  # def list_title_range
+  #   @titles = AllTime100Novels::Titles
+  # end
 
-  def get_titles
-    binding.pry
-    titles = Scraper.get_page
+  def get_titles(num1, num2)
+    titles = AllTime100Novels::Scraper.all
+    #binding.pry
+    while num1 <= num2
+      puts "#{titles[num1][:position]}.  #{titles[num1][:title_name]}"
+      num1 += 1
+    end
   end
 
 
@@ -43,29 +47,28 @@ class AllTime100Novels::CLI
     input = gets.strip.downcase
     case input
     when "a"
-      list_title_range.a
+      get_titles(1, 17)
       puts "Please select the title number:"
-      title_info
     when "c"
-      list_title_range.c
+      get_titles(18, 31)
       puts "Please select the title number:"
     when "f"
-      puts "List of F-G"
+        get_titles(32, 39)
       puts "Please select the title number:"
     when "h"
-      puts "List of H-I"
+      get_titles(40, 48)
       puts "Please select the title number:"
     when "l"
-      puts "List of L-N"
+      get_titles(49, 65)
       puts "Please select the title number:"
     when "o"
-      puts "List of O-R"
+      get_titles(66, 80)
       puts "Please select the title number:"
     when "s"
-      puts "List of S-T"
+      get_titles(81, 93)
       puts "Please select the title number:"
     when "u"
-      puts "U-W"
+      get_titles(94, 100)
       puts "Please select the title number:"
     when "y" || "z"
       puts "Suprisingly, there are no novels that start with 'y' or 'z' that made the list! Please choose again. As a reminder, you can type 'list' for the letter ranges, and 'exit' to leave the program!"
