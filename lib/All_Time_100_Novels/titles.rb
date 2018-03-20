@@ -1,7 +1,7 @@
 class AllTime100Novels::Titles
   attr_accessor :author, :desciption, :year_released
 
-  def self.make_from_index_page(title)
+  def self.make_from_index_page(num)
     title.url
   end
 

@@ -17,11 +17,14 @@ class AllTime100Novels::Scraper
   def self.all
     @@all
   end
-  # def make_titles
-  #   get_page.each do |title|
-  #     AllTime100Novels::Titles.make_from_index_page(title)
-  #   end
-  # end
+
+  def self.title_page(num)
+    doc = Nokogiri::HTML(open(@@all[num][:url]))
+    binding.pry
+    summary = doc.css(".has-titles div  div p:nth-child(3)").text
+
+
+  end
 
 
 end

@@ -34,9 +34,11 @@ class AllTime100Novels::CLI
     end
   end
 
-  def print_title_page(input)
 
+  def print_title_page(num)
+     title = AllTime100Novels::Scraper.title_page(num)
   end
+
 
   def menu
     puts "Please type a letter in the range you would like to select!"
@@ -47,27 +49,43 @@ class AllTime100Novels::CLI
     when "a", "b"
       get_titles(1, 17)
       puts "Please select the title number:"
+      num = gets.strip.to_i
+      print_title_page(num)
     when "c", "d"
       get_titles(18, 31)
       puts "Please select the title number:"
+      num = gets.strip.to_i
+      print_title_page(num)
     when "f", "g"
       get_titles(32, 39)
       puts "Please select the title number:"
+      num = gets.strip.to_i
+      print_title_page(num)
     when "h", "i"
       get_titles(40, 48)
       puts "Please select the title number:"
+      num = gets.strip.to_i
+      print_title_page(num)
     when "l", "n"
       get_titles(49, 65)
       puts "Please select the title number:"
+      num = gets.strip.to_i
+      print_title_page(num)
     when "o", "r"
       get_titles(66, 80)
       puts "Please select the title number:"
+      num = gets.strip.to_i
+      print_title_page(num)
     when "s", "t"
       get_titles(81, 93)
       puts "Please select the title number:"
+      num = gets.strip.to_i
+      print_title_page(num)
     when "u", "w"
       get_titles(94, 100)
       puts "Please select the title number:"
+      num = gets.strip.to_i
+      print_title_page(num)
     when "y", "z", "e", "j", "k", "q", "v"
       puts "Suprisingly, there are no novels that start with 'e', 'j', 'k', 'q', 'v', 'y' or 'z' that made the list! Please choose again. As a reminder, you can type 'list' for the letter ranges, and 'exit' to leave the program!"
     when "list"
