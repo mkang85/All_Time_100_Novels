@@ -12,7 +12,6 @@ class AllTime100Novels::Scraper
       title_name = title.text
       @@all << {title_name: title_name, url: url, position: position}
     end
-    @@all
   end
 
   def make_titles

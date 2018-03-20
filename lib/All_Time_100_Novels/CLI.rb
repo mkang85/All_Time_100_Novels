@@ -3,9 +3,9 @@ class AllTime100Novels::CLI
 
   def call
     welcome
-    binding.pry
     AllTime100Novels::Scraper.new.get_page #Here I want to just see where I left off.
     #AllTime100Novels::Scraper.make_titles - This is to populate my titles.
+    #just wanted to see this update
     list_titles
     menu
   end
