@@ -4,7 +4,6 @@ class AllTime100Novels::CLI
   def call
     welcome
     AllTime100Novels::Scraper.new.get_page #Here I want to just see where I left off.
-    #AllTime100Novels::Scraper.make_titles - This is to populate my titles.
     #just wanted to see this update
     list_titles
     menu
@@ -26,9 +25,6 @@ class AllTime100Novels::CLI
     puts "U-W"
   end
 
-  # def list_title_range
-  #   @titles = AllTime100Novels::Titles
-  # end
 
   def get_titles(num1, num2)
     titles = AllTime100Novels::Scraper.all
@@ -38,6 +34,9 @@ class AllTime100Novels::CLI
     end
   end
 
+  def print_title_page(input)
+
+  end
 
   def menu
     puts "Please type a letter in the range you would like to select!"
