@@ -1,5 +1,6 @@
 # All_Time_100_Novels
-CLI Data Gem project - allows you to select and find out info about Time Magazine's 100 Novels
+CLI Data Gem project - allows you to select and find out info about Time Magazine's
+selection of 100 novels in the past century.
 
 
 
@@ -27,7 +28,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Just follow the instructions that appear!
 
 ## Development
 
