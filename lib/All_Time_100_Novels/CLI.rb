@@ -39,6 +39,16 @@ class AllTime100Novels::CLI
      title = AllTime100Novels::Scraper.title_page(num)
   end
 
+  def one_for_the_road
+    input = gets.strip.downcase
+    if input == "y"
+      menu
+    else
+      puts ""
+      puts "Thanks for stopping by!"
+    end
+  end
+
 
   def menu
     puts "Please type a letter in the range you would like to select!"
@@ -53,104 +63,56 @@ class AllTime100Novels::CLI
       puts "Please select the title number:"
       num = gets.strip.to_i
       print_title_page(num)
-        input = gets.strip.downcase
-        if input == "y"
-          menu
-        else
-          puts ""
-          puts "Thanks for stopping by!"
-        end
+      one_for_the_road
     when "c", "d"
       puts ""
       get_titles(18, 31)
       puts "Please select the title number:"
       num = gets.strip.to_i
       print_title_page(num)
-      input = gets.strip.downcase
-      if input == "y"
-        menu
-      else
-        puts ""
-        puts "Thanks for stopping by!"
-      end
+      one_for_the_road
     when "f", "g"
         puts ""
       get_titles(32, 39)
       puts "Please select the title number:"
       num = gets.strip.to_i
       print_title_page(num)
-      input = gets.strip.downcase
-      if input == "y"
-        menu
-      else
-        puts ""
-        puts "Thanks for stopping by!"
-      end
+      one_for_the_road
     when "h", "i"
         puts ""
       get_titles(40, 48)
       puts "Please select the title number:"
       num = gets.strip.to_i
       print_title_page(num)
-      input = gets.strip.downcase
-      if input == "y"
-        menu
-      else
-        puts ""
-        puts "Thanks for stopping by!"
-      end
+        one_for_the_road
     when "l", "n"
       puts ""
       get_titles(49, 65)
       puts "Please select the title number:"
       num = gets.strip.to_i
       print_title_page(num)
-      input = gets.strip.downcase
-      if input == "y"
-        menu
-      else
-        puts ""
-        puts "Thanks for stopping by!"
-      end
+      one_for_the_road
     when "o", "r"
       puts ""
       get_titles(66, 80)
       puts "Please select the title number:"
       num = gets.strip.to_i
       print_title_page(num)
-      input = gets.strip.downcase
-      if input == "y"
-        menu
-      else
-        puts ""
-        puts "Thanks for stopping by!"
-      end
+      one_for_the_road
     when "s", "t"
       puts ""
       get_titles(81, 93)
       puts "Please select the title number:"
       num = gets.strip.to_i
       print_title_page(num)
-      input = gets.strip.downcase
-      if input == "y"
-        menu
-      else
-        puts ""
-        return "Thanks for stopping by!"
-      end
+      one_for_the_road
     when "u", "w"
       puts ""
       get_titles(94, 100)
       puts "Please select the title number:"
       num = gets.strip.to_i
       print_title_page(num)
-      input = gets.strip.downcase
-      if input == "y"
-        menu
-      else
-        puts ""
-        puts "Thanks for stopping by!"
-      end
+      one_for_the_road
     when "y", "z", "e", "j", "k", "q", "v"
       puts "Suprisingly, there are no novels that start with 'e', 'j', 'k', 'q', 'v', 'y' or 'z' that made the list! Please choose again. As a reminder, you can type 'list' for the letter ranges, and 'exit' to leave the program!"
     when "list"
@@ -161,7 +123,6 @@ class AllTime100Novels::CLI
       puts "Sorry, invalid selection. Please select a letter range, type 'list' to see the letter ranges again, or 'exit' to exit the program!"
     end
   end
-  exit
 end
 
 end
