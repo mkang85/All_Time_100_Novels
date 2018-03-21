@@ -3,14 +3,15 @@ class AllTime100Novels::CLI
 
   def call
     welcome
-    AllTime100Novels::Scraper.new.get_page #Here I want to just see where I left off.
-    #just wanted to see this update
-      menu
+    AllTime100Novels::Scraper.new.get_page
+    menu
   end
 
   def welcome
+    puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     puts "Welcome to Time Magazine's 100 Best English Language Novels!"
-    puts "There are 100 novels broken down in letter ranges:"
+    puts "This list is broken down alphabetically, and not by ranking."
+    puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
   end
 
   def list_titles
@@ -30,7 +31,7 @@ class AllTime100Novels::CLI
     while num1 <= num2
       puts "#{titles[num1][:position]}.  #{titles[num1][:title_name]}"
       num1 += 1
-    end
+      end
   end
 
 
@@ -47,6 +48,7 @@ class AllTime100Novels::CLI
     input = gets.strip.downcase
     case input
     when "a", "b"
+      puts ""
       get_titles(1, 17)
       puts "Please select the title number:"
       num = gets.strip.to_i
@@ -59,6 +61,7 @@ class AllTime100Novels::CLI
           puts "Thanks for stopping by!"
         end
     when "c", "d"
+      puts ""
       get_titles(18, 31)
       puts "Please select the title number:"
       num = gets.strip.to_i
@@ -71,6 +74,7 @@ class AllTime100Novels::CLI
         puts "Thanks for stopping by!"
       end
     when "f", "g"
+        puts ""
       get_titles(32, 39)
       puts "Please select the title number:"
       num = gets.strip.to_i
@@ -83,6 +87,7 @@ class AllTime100Novels::CLI
         puts "Thanks for stopping by!"
       end
     when "h", "i"
+        puts ""
       get_titles(40, 48)
       puts "Please select the title number:"
       num = gets.strip.to_i
@@ -95,6 +100,7 @@ class AllTime100Novels::CLI
         puts "Thanks for stopping by!"
       end
     when "l", "n"
+      puts ""
       get_titles(49, 65)
       puts "Please select the title number:"
       num = gets.strip.to_i
@@ -107,6 +113,7 @@ class AllTime100Novels::CLI
         puts "Thanks for stopping by!"
       end
     when "o", "r"
+      puts ""
       get_titles(66, 80)
       puts "Please select the title number:"
       num = gets.strip.to_i
@@ -119,6 +126,7 @@ class AllTime100Novels::CLI
         puts "Thanks for stopping by!"
       end
     when "s", "t"
+      puts ""
       get_titles(81, 93)
       puts "Please select the title number:"
       num = gets.strip.to_i
@@ -131,6 +139,7 @@ class AllTime100Novels::CLI
         return "Thanks for stopping by!"
       end
     when "u", "w"
+      puts ""
       get_titles(94, 100)
       puts "Please select the title number:"
       num = gets.strip.to_i
